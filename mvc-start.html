@@ -96,11 +96,11 @@ require("dotenv").config()
 let pool
 if (process.env.NODE_ENV == "development") {
   pool = new Pool({
-    host: process.env.DB_HOST,
+    host:     process.env.DB_HOST,
     database: process.env.DB_NAME,
-    user: process.env.DB_USER,
+    user:     process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT || 5432,
+    port:     process.env.DB_PORT || 5432,
     ssl: {
         rejectUnauthorized: false,
     },
@@ -217,11 +217,11 @@ module.exports = {
         </li>
         <li>
           On a blank line type, 
-          <pre><code class="language-javascript">DB_HOST="143.198.247.195"
-DB_NAME="[USE DATABASE NAME FROM FILE]"
-DB_USER="[USE YOUR USERNAME FROM FILE]"
+          <pre><code class="language-javascript">DB_HOST=   "143.198.247.195"
+DB_NAME=    "[USE DATABASE NAME FROM FILE]"
+DB_USER=    "[USE YOUR USERNAME FROM FILE]"
 DB_PASSWORD="[USE YOUR PASSWORD FROM FILE/STUDENT ID W/ONLY NUMBERS]"
-DB_PORT="5432"</code></pre>
+DB_PORT=    "5432"</code></pre>
         </li>
         <li>Confirm that no warnings or errors appear in the <span class="fn">.env</span> file.</li>
         <li>Save and close the file.</li>
