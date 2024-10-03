@@ -96,9 +96,13 @@ require("dotenv").config()
 let pool
 if (process.env.NODE_ENV == "development") {
   pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT || 5432,
     ssl: {
-      rejectUnauthorized: false,
+        rejectUnauthorized: false,
     },
 })
 
@@ -212,20 +216,19 @@ module.exports = {
           Open the <span class="fn">.env</span> file in <span title="Visual Studio Code">VSC</span>.
         </li>
         <li>
-          On a blank line type, <pre><code class="language-javascript">DB_HOST="143.198.247.195"
-            DB_NAME="[USE DATABASE NAME FROM FILE]"
-            DB_USER="[USE YOUR USERNAME FROM FILE]"
-            DB_PASSWORD="[USE YOUR PASSWORD FROM FILE/STUDENT ID W/ONLY NUMBERS]"
-            DB_PORT="5432"</code></pre>, then paste the string copied from <span class="fn">render.com</span>. Make sure there is
-          no space in the entire string.
+          On a blank line type, 
+          <pre><code class="language-javascript">DB_HOST="143.198.247.195"
+DB_NAME="[USE DATABASE NAME FROM FILE]"
+DB_USER="[USE YOUR USERNAME FROM FILE]"
+DB_PASSWORD="[USE YOUR PASSWORD FROM FILE/STUDENT ID W/ONLY NUMBERS]"
+DB_PORT="5432"</code></pre>
         </li>
         <li>Confirm that no warnings or errors appear in the <span class="fn">.env</span> file.</li>
         <li>Save and close the file.</li>
       </ol>
       <p>
         When you get ready to run and test your application, the database
-        connection pool will look in the <span class="fn">.env</span> file for a variable of
-        <code class="language-javascript">DATABASE_URL</code>. When found, it will use the connection string to
+        connection pool will look in the <span class="fn">.env</span> file for the variables above. When found, it will use the connection string to
         attempt to talk to the database server. If successful, the pool will
         then have the ability to run the query in the <span class="fn">inventory-model</span> file,
         which you will build next, and return the data from the server.
@@ -734,7 +737,7 @@ module.exports = Util
       <a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/deed.en_US" title="Read the license" target="_blank">Creative Commons Attribution-ShareAlike 3.0 License</a>.
     </footer>
   </div>
-  <script src="/340br/js/prism-coy-dev.min.js"></script>
+  <script src="https://blainerobertson.github.io/340br/js/prism-coy-dev.min.js"></script>
 </body>
 
 </html>
