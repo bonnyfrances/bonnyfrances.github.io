@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Remote Connection | Web Backend Development</title>
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://blainerobertson.github.io/340-js/css/340course-min.css" type="text/css" media="screen">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header><img src="https://blainerobertson.github.io/340-js/images/small_banner.jpg" alt="Course Banner"></header>
+    <main>
+      <h1>Remote Connection to Hosted Database</h1>
+
+    
+      <h2>Introduction</h2>
+      <p>With pgAdmin4 installed, we can now establish a connection between the
+        two in order to build the structure and populate the database with content.</p>
+      <h2>Check the Access Control Source</h2>
+
+      <h2>pgAdmin Remote Connection</h2>
+      <ol>
+        <li>Open the pgAdmin application.</li>
+        <li>On the left side, should be a "Servers" panel. This is where we will build the connection.
+          <ol>
+            <li>Right-click on the <code class="language-markup">Servers</code> name.</li>
+            <li>Select <code class="language-markup">Register &gt; Server</code>. A dialog box should open:
+              <div class="callout"><img src="https://blainerobertson.github.io/340-js/images/register-server-1.png"
+                  alt="Screenshot of the pgAdmin Register-Server dialog box"></div>
+            </li>
+            <li>Provide a descriptive name (e.g. CSE340 Database). Leave all other settings on this screen alone.</li>
+            <li>Click "Connection" in the top bar of the dialog box.</li>
+            <li>Using the file with your database connection info linked previously for all following credentials, </li>
+            <li>Copy the <b>IP address</b></li>
+            <li>Return to pgAdmin and paste the <b>IP address<b> into the "Host name / address" dialog box.</li>
+            <li>The value of the Port should be "5432". That is correct, so don't change it.</li>
+            <li>In the pgAdmin dialog box, paste the <b>database name</b> into the "Maintenance database" text box.</li>
+            <li>In the pgAdmin dialog box, paste the <b>Username</b> into the "Username" text box.</li>
+            <li>In the pgAdmin dialog box, paste the <b>Password</b> into the "Password" text box and toggle "Save Password" option.</li>
+            <li>Leave the other settings on this screen alone.</li>
+            <li>Click "Parameters" in the top bar of the dialog box.</li>
+            <li>Change, if needed, the "SSL Mode" to "Require".</li>
+            <li>Click the "Save" button.</li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>Close the Connection</h2>
+      <p>On the Free tier that offers, it is important to not overuse time or resources. It is
+        recommended that when you are done with your interaction between pgAdmin and the database server that the
+        connection be closed. To do so:</p>
+      <ol>
+        <li>Right-click on the Render server object in the "Servers" panel of pgAdmin.</li>
+        <li>Select "Disconnect from Server".</li>
+        <li>You're done.</li>
+      </ol>
+
+      <h2>Conclusion</h2>
+      <p>As you can see, establishing this connection requires a fair amount of work. You should only have to repeat
+        this when your Render.com database expires and a new one is built.</p>
+    </main>
+    <footer>
+      <a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License"
+          style="border-width:0" src="//i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a> All materials (except as
+      noted) are by Blaine Robertson and licensed under a <a rel="license"
+        href="//creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0
+        License</a>. </footer>
+  </div>
+</body>
+
+</html>
