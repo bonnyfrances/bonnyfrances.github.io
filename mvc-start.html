@@ -203,15 +203,10 @@ module.exports = {
         <li>
           Open the database connection settings in the Online Database Credentials file (found in the module) for quick reference
         </li>
-        <li>Open the .env file in VSC, and copy/paste the following on a new line:</li>
-        <li>Scroll down to the "Connections" area.</li>
-        <li>Click the "Copy" button on the "External Database URL" line.</li>
-        <li>
-          Open the <span class="fn">.env</span> file in <span title="Visual Studio Code">VSC</span>.
-        </li>
+        <li>Open the .env file in VSC</li>
         <li>
           On a blank line copy/paste and modify the [TEXT] for your personal connection settings, 
-          <pre><code class="language-javascript">DATABASE_URL = "postgres://USERNAME:PASSWORD@143.198.247.195:5432/DATABASE_NAME"</code></pre>
+          <pre><code class="language-javascript">DATABASE_URL = "postgres://[USERNAME]:[PASSWORD]@143.198.247.195:5432/[DATABASE_NAME]"</code></pre>
 
 it should look similar this (I hid my password)
 <pre><code class="language-javascript">DATABASE_URL = "postgres://woodsb:*******@143.198.247.195:5432/woodsb"</code></pre>
